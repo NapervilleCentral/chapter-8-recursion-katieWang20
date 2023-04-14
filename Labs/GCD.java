@@ -18,8 +18,9 @@ public class GCD
     public static void main(String[] args)
     {
         // initialise instance variables
-        System.out.println(gcd(25,1075));
-        
+        System.out.println("GCD of 25 and 1075 is " +gcd(25,1075));
+                System.out.println("GCD of 21 and 1075 is " +gcd(21,1075));
+
     }
     
     public static int gcd(int num1, int num2){
