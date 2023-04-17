@@ -55,6 +55,7 @@ public class SierpinskiGasket extends JPanel
     }
 
   
+//find midpoint of each smaller triangle to make as points of smaller triangle
 
    /** Draws a triangle  in the middle of the 3 x,y points provided
         finds the midpoints of triangles line segments
