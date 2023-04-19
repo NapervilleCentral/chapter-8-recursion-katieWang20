@@ -3,6 +3,7 @@ import java.util.Scanner;
 /**
    Converts a numeric pin to an equivalent word using the digit to
    letter mapping on a standard telephone keypad.
+   thanks dad for helping out 
  */
 public class PinWordEnumerator
 {
@@ -29,7 +30,7 @@ public class PinWordEnumerator
          // number. Implement additional auxiliary methods
          // if necessary.
          
-         //System.out.println(n);
+         //System.out.println(n); 2     3       4   5    6      7     8     9
         String[] map = {"0","1","ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"};
          String word = "";
          
@@ -38,27 +39,22 @@ public class PinWordEnumerator
            // word += map[Integer.valueOf(n.substring(i - 1, i))].substring(0, 1);
         //}
          
-           
+          /* 
             for (int i = 0; i < n.length(); i ++){
-                 int singleNum = Integer.valueOf(n.substring(i-1, i));
+                 int singleNum = Integer.valueOf(n.substring(i, i+1));
                  for (int j = 0; j < map[singleNum].length(); j ++){
-                     System.out.println(map[singleNum].substring(j, j+1));
-                    
+                     System.out.print(map[singleNum].substring(j, j+1));
+                     
                  }
                    
-                //enumerateWords(n, "");
-                //newWord += map[Integer.valueOf(pin.substring(i - 1, i))].substring(i, i+1);
                 
-            //}
-         
-        //System.out.println("word: " + word);
-         //add other letters to a, then add other letters to the second, then third
-         
-         // empty string
-         
+                 System.out.println();
         
 
         }
+        */
+        
+        enumerateWords(n, "");
     }
     /**
            Recursively generates all possible 'words' that represent
@@ -69,44 +65,44 @@ public class PinWordEnumerator
          */
         public static void enumerateWords(String pin, String word)
         {
+
             //System.out.println(word);
-            String newWord = word;
+            //String newWord = word;
             //               0   1   2      3     4     5     6    7      8     9 
             String[] map = {"0","1","ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"};         
             
-            
+            if (pin.length() == 0){
+                 System.out.println(word);
+                 return;
+            }
            
-            enumerateWords(pin, newWord);
+            int singleDigit = Integer.parseInt(pin.substring(0, 1));
+            String letterGroup = map[singleDigit];
             
-            
-            /*
-             * 
-             * garbage disaster 
-            for (int i = 0; i < pin.length(); i++){
-                int singlePinNum = Integer.valueOf(pin.substring(i, i+1));
-                for (int mapIndex = 0; mapIndex < map.length; mapIndex ++){
-                    for (int mapLetterIndex = 0; mapLetterIndex < map[mapIndex].length(); mapLetterIndex ++){
-                        if (map[singlePinNum].substring(mapLetterIndex, mapLetterIndex + 1).equals(word.substring(i, i+1))){
-                            if (singlePinNum == 1){
-                                newWord += "1";
-                            }else if (singlePinNum == 0){
-                                newWord += "0";
-                            }else{
-                                newWord  
-                               
-                            }
-                        }
-                    }
-                }
+             for (int i = 0; i < letterGroup.length(); i ++){
+                // shorten the pin by 1
+                // ex: 1234 becomes 234 after method call
+                //keeps shortening pin lenght until base case is hit
                 
-                
-                
-                */    
-            
+                //each splits in more and more
+                //imagine a tree
+               
+                enumerateWords(pin.substring(1), word + letterGroup.charAt(i));
             }
             
             
+           
+
             
+            
+            
+
+             
+            
+        }
+        
+        
+
     }
             
             
