@@ -34,10 +34,7 @@ public class PinWordEnumerator
         String[] map = {"0","1","ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"};
          String word = "";
          
-        //for (int i = 1; i <= n.length(); i ++){
-            
-           // word += map[Integer.valueOf(n.substring(i - 1, i))].substring(0, 1);
-        //}
+       
          
           /* 
             for (int i = 0; i < n.length(); i ++){
@@ -76,7 +73,7 @@ public class PinWordEnumerator
                  return;
             }
            
-            int singleDigit = Integer.parseInt(pin.substring(0, 1));
+            int singleDigit = Integer.valueOf(pin.substring(0, 1));
             String letterGroup = map[singleDigit];
             
              for (int i = 0; i < letterGroup.length(); i ++){
@@ -86,7 +83,7 @@ public class PinWordEnumerator
                 
                 //each splits in more and more
                 //imagine a tree
-               
+                //so it splits each letter 
                 enumerateWords(pin.substring(1), word + letterGroup.charAt(i));
             }
             
