@@ -132,10 +132,10 @@ public class SierpinskiGasket extends JPanel
            
            
            //Triangle(leftTriangleXPos, leftTriangleYPos, page);
-           //int [] rightTriangleXPos = {ACMidX, xPos[0], BCMidX, ACMidX};
-           //int [] rightTriangleYPos = {ACMidY, yPos[0], BCMidY, ACMidY};
+           int [] rightTriangleXPos = {ACMidX, xPos[0], BCMidX, ACMidX};
+           int [] rightTriangleYPos = {ACMidY, yPos[0], BCMidY, ACMidY};
            
-           //Triangle(rightTriangleXPos, rightTriangleYPos, page);
+           Triangle(rightTriangleXPos, rightTriangleYPos, page);
            
            //xPos[0] = ABMidX;
         
