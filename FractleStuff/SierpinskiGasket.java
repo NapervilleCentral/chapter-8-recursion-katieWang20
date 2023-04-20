@@ -80,7 +80,7 @@ public class SierpinskiGasket extends JPanel
        int dysquared = (int)Math.pow(yPos[0] - yPos[1],2);
        int distance = (int)Math.sqrt(dxsquared + dysquared);
 
-
+         page.setColor (Color.red);
 
         if (distance > 10)
         {
@@ -88,15 +88,85 @@ public class SierpinskiGasket extends JPanel
             //int ABMidx = (xPos[0]
             //int ABMidy = (
             
-            //draw the tri
             
-            //int[] newXPos = {0, 0, 0, 0};
-            //int[] newYPos = {0, 0, 0, 0};
+                        /*
+               //x is accross and y is down
+               point 1 - Right  A
+               point 2 - Left   B
+               point 3 - Top    C
+               point 4 draws back to point 1 to complete triangle
             
-            int ABMMidX = (xPos[0] - xPos[1])/2;
-            int ABMmidY = yPos[0]/2;
+                private int[] xPos = {360, 40, 200, 360};
+                private int[] yPos = {300, 300, 20, 300};
+            */
             
-            for (int i = 0; i < xPos.length-2;i++){
+           int ABMidX = (xPos[0]+xPos[1])/2;
+           int ACMidX = (xPos[0] + xPos[2])/2;
+           int BCMidX = (xPos[2] + xPos[1])/2;
+           
+           int ABMidY = (yPos[0] + yPos[1])/2;
+           int ACMidY = (yPos[0] + yPos[2])/2;
+           int BCMidY = (yPos[1] + yPos[2])/2;
+           //what
+           xPos[0] = xPos[1];//ABMidX;
+           xPos[1] = BCMidX;
+           //xPos[2] = BCMidX;
+           //xPos[3] = ABMidX;
+           
+           yPos[0] = yPos[1];//ABMidY;
+           yPos[1] = BCMidY;
+           //yPos[2] = BCMidY;
+           //yPos[3] = ABMidY;
+           page.drawPolyline (xPos, yPos, xPos.length);
+           
+           xPos[0] = ABMidX;
+           yPos[0] = ABMidY;
+           xPos[1] = BCMidX;
+           yPos[1] = BCMidY;
+           
+           page.drawPolyline (xPos, yPos, xPos.length);
+           
+           int [] leftTriangleXPos = {ABMidX, xPos[1], BCMidX, ABMidX};
+           int [] leftTriangleYPos = {ABMidY, yPos[1], BCMidY, ABMidY};
+           
+           int [] rightTriangleXPos = {ACMidX, xPos[0], BCMidX, ACMidX};
+           int [] rightTriangleYPos = {ACMidY, yPos[0], BCMidY, ACMidY};
+           
+           Triangle(leftTriangleXPos, leftTriangleYPos, page);
+           Triangle(rightTriangleXPos, rightTriangleYPos, page);
+           
+           //xPos[0] = ABMidX;
+        
+           
+           //ABMidX = (xPos[0]+xPos[1])/2;
+           //ACMidX = (xPos[0] + xPos[2])/2;
+          // BCMidX = (xPos[2] + xPos[1])/2;
+           
+          // ABMidY = (yPos[0] + yPos[1])/2;
+          // ACMidY = (yPos[0] + yPos[2])/2;
+           //BCMidY = (yPos[1] + yPos[2])/2;
+           
+           
+           
+           
+           
+
+            //Triangle(xPos, yPos, page);
+           
+        /**
+         * 
+         */
+
+            
+            //page.drawTriangle();
+           
+            //Triangle(xPos, yPos, page);
+            //Triangle(xPos, yPos, page);
+            //Triangle(xPos, yPos, page);
+        /**
+         * 
+            
+            for (int i = 0; i < xPos.length-1;i++){
                 xPos[i] = Math.abs((xPos[i] - xPos[i+1])/2);
                 yPos[i] = Math.abs((yPos[i]-yPos[i+1])/2);
             
@@ -104,14 +174,12 @@ public class SierpinskiGasket extends JPanel
             xPos[3] = xPos[0];
             yPos[3] = yPos[0];
             
-            Triangle(xPos, xPos, page);
+         */           
             //call the 3 new triangles
             
-
-
+           
         }
-
-
+        
 
    }//end of Triangle
    
