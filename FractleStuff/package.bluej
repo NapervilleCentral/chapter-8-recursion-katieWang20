@@ -1,17 +1,17 @@
 #BlueJ package file
-dependency1.from=CircleViewer
-dependency1.to=CirclePanel
+dependency1.from=Runner
+dependency1.to=SierpinskiViewer
 dependency1.type=UsesDependency
-dependency2.from=Runner
-dependency2.to=SierpinskiViewer
+dependency2.from=SierpinskiViewer
+dependency2.to=SierpinskiGasket
 dependency2.type=UsesDependency
-dependency3.from=SierpinskiViewer
-dependency3.to=SierpinskiGasket
+dependency3.from=CircleViewer
+dependency3.to=CirclePanel
 dependency3.type=UsesDependency
-editor.fx.0.height=720
-editor.fx.0.width=808
-editor.fx.0.x=577
-editor.fx.0.y=162
+editor.fx.0.height=1039
+editor.fx.0.width=974
+editor.fx.0.x=-7
+editor.fx.0.y=0
 objectbench.height=94
 objectbench.width=1342
 package.divider.horizontal=0.6
