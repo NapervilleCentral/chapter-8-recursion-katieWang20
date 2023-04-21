@@ -16,7 +16,7 @@ public class getRich
     public static void main(String[] arg){
         System.out.println();
         int money = 1000;
-       // getRich(money);
+      
         
         System.out.println("Goal: " +getRich(money));    
     }
@@ -32,12 +32,7 @@ public class getRich
            return 1;
         }else{
             
-            
-            
-           
-           //getRich(money/10);
-           
-           //getRich(money/10);
+      
            return getRich(money/10)+
            getRich(money/10)+
            getRich(money/10)+
@@ -49,7 +44,7 @@ public class getRich
            getRich(money/10)+
            getRich(money/10);
         
-          //return money + getRich(money/10);
+    
             
         }
         

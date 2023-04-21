@@ -32,24 +32,10 @@ public class PinWordEnumerator
          
          //System.out.println(n); 2     3       4   5    6      7     8     9
         String[] map = {"0","1","ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"};
-         String word = "";
+        String word = "";
          
        
          
-          /* 
-            for (int i = 0; i < n.length(); i ++){
-                 int singleNum = Integer.valueOf(n.substring(i, i+1));
-                 for (int j = 0; j < map[singleNum].length(); j ++){
-                     System.out.print(map[singleNum].substring(j, j+1));
-                     
-                 }
-                   
-                
-                 System.out.println();
-        
-
-        }
-        */
         
         enumerateWords(n, "");
     }
@@ -78,13 +64,14 @@ public class PinWordEnumerator
             
              for (int i = 0; i < letterGroup.length(); i ++){
                 // shorten the pin by 1
-                // ex: 1234 becomes 234 after method call
+                // adds indexed letter to word
                 //keeps shortening pin lenght until base case is hit
                 
-                //each splits in more and more
-                //imagine a tree
-                //so it splits each letter 
+               
+                //tree
+               
                 enumerateWords(pin.substring(1), word + letterGroup.charAt(i));
+                
             }
             
             
