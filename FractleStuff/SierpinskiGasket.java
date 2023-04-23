@@ -108,85 +108,25 @@ public class SierpinskiGasket extends JPanel
            int ACMidY = (yPos[0] + yPos[2])/2;
            int BCMidY = (yPos[1] + yPos[2])/2;
            
-           int [] smallerXPoints = {ABMidX, ACMidX, xPos[0]};
-           int [] smallerYPoints = {ABMidY, ACMidY, yPos[0]};
-           //what
+           int [] xPointsCornerA = {xPos[0],ABMidX, ACMidX, xPos[0]};
+           int [] yPointsCornerA = {yPos[0], ABMidY, ACMidY, yPos[0]};
            
-           page.drawPolyline(smallerXPoints, smallerYPoints, xPos.length);
+           int [] xPointsCornerB = {xPos[1],ABMidX, BCMidX, xPos[1]};
+           int [] yPointsCornerB = {yPos[1], ABMidY, BCMidY, yPos[1]};
            
-           smallerXPoints[0] = xPos[1];//ABMidX;
-           smallerXPoints[1] = BCMidX;
+           int [] xPointsCornerC = {xPos[2],ACMidX, BCMidX, xPos[2]};
+           int [] yPointsCornerC = {yPos[2],ACMidY, BCMidY, yPos[2]};
            
+           page.drawPolyline(xPointsCornerA, yPointsCornerA, xPos.length);
+           page.drawPolyline(xPointsCornerB, yPointsCornerB, xPos.length);
+           page.drawPolyline(xPointsCornerC, yPointsCornerC, xPos.length);
            
-           smallerYPoints[0] = yPos[1];//ABMidY;
-           smallerYPoints[1] = BCMidY;
-           //yPos[2] = BCMidY;
-           //yPos[3] = ABMidY;
-           page.drawPolyline(smallerXPoints, smallerYPoints, xPos.length);
+           Triangle (xPointsCornerA, yPointsCornerA, page);
+           Triangle (xPointsCornerB, yPointsCornerB, page);
+           Triangle (xPointsCornerC, yPointsCornerC, page);
            
-           smallerXPoints[0] = ABMidX;
-           smallerXPoints[1] = BCMidX;
-           
-           smallerYPoints[0] = ABMidY;
-           smallerYPoints[1] = BCMidY;
-           
-           page.drawPolyline(smallerXPoints, smallerYPoints, xPos.length);
-           
-           int [] leftTriangleXPos = {ABMidX, xPos[1], BCMidX, ABMidX};
-           int [] leftTriangleYPos = {ABMidY, yPos[1], BCMidY, ABMidY};
-           
-           
-           
-           //Triangle(leftTriangleXPos, leftTriangleYPos, page);
-           int [] rightTriangleXPos = {ACMidX, xPos[0], BCMidX, ACMidX};
-           int [] rightTriangleYPos = {ACMidY, yPos[0], BCMidY, ACMidY};
-           
-           int [] upTriangleXPos = {ABMidX, BCMidX, xPos[2], ABMidX};
-           int [] upTriangleYPos = {ABMidY, BCMidY, yPos[2], ABMidY};
-           
-           Triangle(rightTriangleXPos, rightTriangleYPos, page);
-           Triangle(leftTriangleXPos, leftTriangleYPos, page);
-           Triangle(upTriangleXPos, upTriangleYPos, page);
-           //xPos[0] = ABMidX;
-        
-           
-           //ABMidX = (xPos[0]+xPos[1])/2;
-           //ACMidX = (xPos[0] + xPos[2])/2;
-          // BCMidX = (xPos[2] + xPos[1])/2;
-           
-          // ABMidY = (yPos[0] + yPos[1])/2;
-          // ACMidY = (yPos[0] + yPos[2])/2;
-           //BCMidY = (yPos[1] + yPos[2])/2;
-           
-           
-           
-           
-           
-
-            //Triangle(xPos, yPos, page);
-           
-        /**
-         * 
-         */
-
-            
-            //page.drawTriangle();
-           
-            //Triangle(xPos, yPos, page);
-            //Triangle(xPos, yPos, page);
-            //Triangle(xPos, yPos, page);
-        /**
-         * 
-            
-            for (int i = 0; i < xPos.length-1;i++){
-                xPos[i] = Math.abs((xPos[i] - xPos[i+1])/2);
-                yPos[i] = Math.abs((yPos[i]-yPos[i+1])/2);
-            
-            }
-            xPos[3] = xPos[0];
-            yPos[3] = yPos[0];
-            
-         */           
+          
+    
             //call the 3 new triangles
             
            
